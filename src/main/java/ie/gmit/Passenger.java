@@ -7,11 +7,12 @@ public class Passenger {
     private String phone;
     private int age;
 
-    public Passenger(String title, String name, String ID, String phone) {
+    public Passenger(String title, String name, String ID, String phone, int age) {
         setTitle(title);
         setName(name);
         setID(ID);
         setPhone(phone);
+        setAge(age);
     }
 
     public String getTitle() {
@@ -63,6 +64,19 @@ public class Passenger {
         }
         else {
             throw new IllegalArgumentException("Invalid Phone Number entered");
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if(age >= 16) {
+            this.age = age;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid Age entered");
         }
     }
 }
