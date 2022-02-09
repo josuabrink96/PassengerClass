@@ -7,8 +7,9 @@ public class Passenger {
     private long phone;
     private int age;
 
-    public Passenger(String title) {
+    public Passenger(String title, String name) {
         setTitle(title);
+        setName(name);
     }
 
     public String getTitle() {
@@ -21,6 +22,19 @@ public class Passenger {
         }
         else {
             throw new IllegalArgumentException("Invalid title entered");
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if(name.length() >= 3) {
+            this.name = name;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid name entered");
         }
     }
 }
