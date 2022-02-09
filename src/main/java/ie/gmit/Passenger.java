@@ -4,13 +4,14 @@ public class Passenger {
     private String title;
     private String name;
     private String ID;
-    private long phone;
+    private String phone;
     private int age;
 
-    public Passenger(String title, String name, String ID) {
+    public Passenger(String title, String name, String ID, String phone) {
         setTitle(title);
         setName(name);
         setID(ID);
+        setPhone(phone);
     }
 
     public String getTitle() {
@@ -49,6 +50,19 @@ public class Passenger {
         }
         else {
             throw new IllegalArgumentException("Invalid ID entered");
+        }
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        if(phone.length() >= 7) {
+            this.phone = phone;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid Phone Number entered");
         }
     }
 }
